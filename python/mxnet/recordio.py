@@ -170,6 +170,19 @@ class MXIndexedRecordIO(MXRecordIO):
 
 
 IRHeader = namedtuple('HEADER', ['flag', 'label', 'id', 'id2'])
+"""An alias for HEADER used for storing metadata (e.g. labels) that accompanies a record.
+See mxnet.recordio.pack and mxnet.recordio.pack_img for example uses.
+Parameters
+----------
+flag : int
+    available for convenience, can be set arbitrarily
+label : float or an array of float
+    typically used to store label(s) for a record
+id: int
+    usually a unique id representing record
+id2: int
+    available for convenience, can be set arbitrarily
+"""
 _IRFormat = 'IfQQ'
 _IRSize = struct.calcsize(_IRFormat)
 
